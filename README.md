@@ -2,17 +2,49 @@
 
 **A Python-based automated trading bot for S&P 500 (SPX) index using MetaTrader 5**
 
-## Status: Research Phase Complete ✅
+## Status: Research Phase Complete ✅ (Updated for Prop Firm Constraints)
 
-This repository contains comprehensive research and will host the implementation of a highly profitable SPX trading bot based on proven quantitative strategies.
+This repository contains comprehensive research for BOTH personal trading accounts AND prop firm accounts with strict drawdown limits. The strategy has been completely revised to support **4% max drawdown** requirements.
+
+## ⚠️ IMPORTANT: Choose Your Path
+
+This repository contains **THREE different strategies**:
+
+1. **PROP_FIRM_STRATEGY.md** - For prop firm accounts (4% max drawdown)
+2. **STRATEGY_COMPARISON.md** - For personal accounts with moderate risk
+3. **RESEARCH_FINDINGS.md** - For personal accounts with high risk tolerance
+
+**→ Read STRATEGY_SELECTION_GUIDE.md to determine which strategy fits YOUR situation**
 
 ---
 
 ## 📚 Documentation
 
-### Start Here:
-1. **[STRATEGY_COMPARISON.md](STRATEGY_COMPARISON.md)** - Quick reference guide comparing all strategies
-2. **[RESEARCH_FINDINGS.md](RESEARCH_FINDINGS.md)** - Comprehensive 20,000+ word research document
+### 🎯 START HERE FIRST:
+**[STRATEGY_SELECTION_GUIDE.md](STRATEGY_SELECTION_GUIDE.md)** - Decision tree to pick the right strategy for YOUR account type
+
+### Then Read Based on Your Selection:
+
+**For Prop Firm Accounts (4% max drawdown):**
+- **[PROP_FIRM_STRATEGY.md](PROP_FIRM_STRATEGY.md)** - Complete guide for prop firm trading
+  - SPX Options strategies (Credit Spreads, Iron Condors)
+  - 75-90% win rate approaches
+  - Ultra-conservative position sizing (0.25-0.5% risk)
+  - Expected: 7-16% annual returns, <4% drawdown
+
+**For Personal Accounts (Moderate Risk):**
+- **[STRATEGY_COMPARISON.md](STRATEGY_COMPARISON.md)** - Balanced approach
+  - Mix of mean reversion + momentum
+  - 55-70% win rate
+  - 1-2% risk per trade
+  - Expected: 20-30% annual returns, 10-15% drawdown
+
+**For Personal Accounts (Aggressive):**
+- **[RESEARCH_FINDINGS.md](RESEARCH_FINDINGS.md)** - Maximum returns
+  - Statistical arbitrage focus (51% proven returns)
+  - Advanced quantitative strategies
+  - 2-3% risk per trade
+  - Expected: 35-50% annual returns, 15-20% drawdown
 
 ### What's Inside:
 
@@ -35,18 +67,26 @@ This repository contains comprehensive research and will host the implementation
 
 ---
 
-## 🎯 Recommended Strategies (Evidence-Based)
+## 🎯 Recommended Strategies by Account Type
 
-### ⭐ Tier 1: MUST IMPLEMENT
+### For Prop Firms (4% Max Drawdown):
 
-| Strategy | Annual Return | Sharpe Ratio | Evidence |
-|----------|---------------|--------------|----------|
-| **Statistical Arbitrage** | 51.47% | 2.38 | 17-year academic study |
-| **Gamma Exposure Filter** | N/A (regime) | N/A | Institutional-grade |
-| **Momentum (260d MA)** | 22-28% | 1.3-1.5 | Proven across decades |
-| **VIX-SPX Volatility** | 32-38% | 1.6-1.9 | Multiple studies |
+| Strategy | Win Rate | Annual Return | Sharpe Ratio | Max Drawdown |
+|----------|----------|---------------|--------------|--------------|
+| **7DTE Credit Put Spreads** | 75-84% | 10-15% | 2.5-3.0 | <3% |
+| **0DTE Iron Condors** | 68-80% | 12-18% | 2.0-2.5 | <4% |
 
-**Combined System Target: 35-45% annual return, 1.8-2.3 Sharpe Ratio**
+**Combined Target: 7-16% annual return, 2.0-3.0 Sharpe, <4% drawdown**
+
+### For Personal Accounts (Higher Risk Tolerance):
+
+| Strategy | Win Rate | Annual Return | Sharpe Ratio | Max Drawdown |
+|----------|----------|---------------|--------------|--------------|
+| **Statistical Arbitrage** | 55-60% | 51.47% | 2.38 | 12-15% |
+| **Momentum (260d MA)** | 45-50% | 22-28% | 1.3-1.5 | 18-22% |
+| **VIX-SPX Volatility** | 60-70% | 32-38% | 1.6-1.9 | 14-18% |
+
+**Combined Target: 35-45% annual return, 1.8-2.3 Sharpe, 15-20% drawdown**
 
 ---
 
@@ -120,29 +160,35 @@ This repository contains comprehensive research and will host the implementation
 
 ## 📊 Expected Performance
 
-### Conservative Target (Year 1):
+### Prop Firm Strategy (4% Max Drawdown):
 ```
-Annual Return:      25-35%
-Sharpe Ratio:       1.5-1.8
-Max Drawdown:       18-22%
-Win Rate:           52-58%
+Annual Return:      7-16%
+Sharpe Ratio:       2.0-3.0
+Max Drawdown:       <4%
+Win Rate:           75-90%
+Risk per Trade:     0.25-0.5%
 ```
+**✅ Passes prop firm evaluations | ✅ Sustainable | ✅ Low stress**
 
-### Optimistic Target (Year 2+):
+### Moderate Strategy (Personal Account):
 ```
-Annual Return:      35-45%
-Sharpe Ratio:       1.8-2.3
-Max Drawdown:       14-18%
-Win Rate:           56-62%
+Annual Return:      20-30%
+Sharpe Ratio:       1.5-2.0
+Max Drawdown:       10-15%
+Win Rate:           55-70%
+Risk per Trade:     1-2%
 ```
+**✅ Balanced growth | ⚠️ Moderate stress | ❌ Not for prop firms**
 
-### Stretch Goal (Based on academic studies):
+### Aggressive Strategy (Personal Account, Large Capital):
 ```
-Annual Return:      45-55%
-Sharpe Ratio:       2.2-2.5
-Max Drawdown:       <15%
-Win Rate:           60-65%
+Annual Return:      35-50%
+Sharpe Ratio:       1.8-2.5
+Max Drawdown:       15-20%
+Win Rate:           50-60%
+Risk per Trade:     2-3%
 ```
+**✅ Maximum returns | ⚠️ Higher stress | ❌ Not for prop firms**
 
 ---
 
