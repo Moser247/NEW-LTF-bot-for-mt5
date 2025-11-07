@@ -78,11 +78,11 @@ class VWAPMeanReversion:
         vwap_series = pd.Series(index=data.index, dtype=float)
 
         # Group by date
-        dates = data.index.date
-        unique_dates = sorted(set(dates))
+        unique_dates = sorted(set([d.date() for d in data.index]))
 
         for date in unique_dates:
-            day_data = data[data.index.date == date]
+            day_mask = pd.Series([d.date() == date for d in data.index], index=data.index)
+            day_data = data[day_mask]
 
             if len(day_data) > 0:
                 day_vwap = self.calculate_vwap(day_data)

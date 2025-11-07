@@ -56,7 +56,8 @@ class OpeningRangeBreakout:
             Dictionary with OR high, low, width or None
         """
         # Filter data for this date and OR time window
-        day_data = data[data.index.date == date]
+        day_mask = pd.Series([d.date() == date for d in data.index], index=data.index)
+        day_data = data[day_mask]
 
         if len(day_data) == 0:
             return None
@@ -99,8 +100,7 @@ class OpeningRangeBreakout:
         signals = []
 
         # Group by date
-        dates = data.index.date
-        unique_dates = sorted(set(dates))
+        unique_dates = sorted(set([d.date() for d in data.index]))
 
         for date in unique_dates:
             # Calculate opening range
@@ -117,8 +117,10 @@ class OpeningRangeBreakout:
             or_width = or_info['width']
 
             # Get data after OR end time
-            day_data = data[data.index.date == date]
-            post_or_data = day_data[day_data.index.time > self.or_end_time]
+            day_mask = pd.Series([d.date() == date for d in data.index], index=data.index)
+            day_data = data[day_mask]
+            time_mask = pd.Series([d.time() > self.or_end_time for d in day_data.index], index=day_data.index)
+            post_or_data = day_data[time_mask]
 
             if len(post_or_data) == 0:
                 continue
