@@ -39,9 +39,10 @@ def load_real_data(file_path: str = None):
     if file_path is None:
         # Try different possible file names (prioritize MT5 broker data)
         possible_files = [
-            'data/spx500_mt5_real.csv',      # MT5 broker data (best)
-            'data/spy_real_alpaca.csv',       # Alpaca data
-            'data/spy_real.csv',              # Generic real data
+            'data/spx500_mt5_real.csv',         # MT5 broker data (best - real intraday)
+            'data/spy_real_alpaca.csv',          # Alpaca data (real intraday)
+            'data/spx500_stooq_intraday.csv',    # Stooq expanded (approximate intraday)
+            'data/spy_real.csv',                 # Generic real data
             'data/spy_real_data.csv',
             'data/spy_real_daily.csv'
         ]
@@ -67,15 +68,16 @@ def load_real_data(file_path: str = None):
     print(f"📂 Loading data from: {file_path}")
 
     try:
-        data = pd.read_csv(file_path, index_col=0)
+        data = pd.read_csv(file_path, index_col=0, parse_dates=True)
 
-        # Parse index as datetime
-        data.index = pd.to_datetime(data.index)
+        # Ensure DatetimeIndex
+        if not isinstance(data.index, pd.DatetimeIndex):
+            data.index = pd.to_datetime(data.index, utc=True)
 
-        # Ensure timezone
+        # Ensure timezone is Eastern
         if data.index.tz is None:
             data.index = data.index.tz_localize('America/New_York')
-        else:
+        elif str(data.index.tz) != 'America/New_York':
             data.index = data.index.tz_convert('America/New_York')
 
         print(f"✅ Loaded {len(data):,} bars")
