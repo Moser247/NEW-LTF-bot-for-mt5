@@ -6,9 +6,9 @@ This script runs the Elite Institutional Strategy on REAL downloaded data
 
 PREREQUISITES:
 1. Download real data first:
-   - Option A: python download_alpaca_data.py
-   - Option B: Export from MT5 and convert
-   - Option C: Use data/spy_real_alpaca.csv if already downloaded
+   - Option A: python download_mt5_data.py (RECOMMENDED - your broker's data)
+   - Option B: python download_alpaca_data.py (free historical data)
+   - Option C: Use data/spx500_mt5_real.csv if already downloaded
 
 USAGE:
    python run_backtest_on_real_data.py
@@ -37,10 +37,11 @@ def load_real_data(file_path: str = None):
         DataFrame with OHLCV data
     """
     if file_path is None:
-        # Try different possible file names
+        # Try different possible file names (prioritize MT5 broker data)
         possible_files = [
-            'data/spy_real_alpaca.csv',
-            'data/spy_real.csv',
+            'data/spx500_mt5_real.csv',      # MT5 broker data (best)
+            'data/spy_real_alpaca.csv',       # Alpaca data
+            'data/spy_real.csv',              # Generic real data
             'data/spy_real_data.csv',
             'data/spy_real_daily.csv'
         ]
@@ -56,6 +57,9 @@ def load_real_data(file_path: str = None):
             print("❌ ERROR: No real data file found")
             print("=" * 80)
             print("\nPlease download real data first:")
+            print("\nOption 1 (RECOMMENDED - Your broker's data):")
+            print("   python download_mt5_data.py")
+            print("\nOption 2 (Free historical data):")
             print("   python download_alpaca_data.py")
             print("\nOr manually place your data file in data/ folder")
             return None
