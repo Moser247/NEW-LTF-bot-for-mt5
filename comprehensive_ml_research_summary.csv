@@ -1,0 +1,7 @@
+phase,metric,baseline_value,best_value,improvement_pct,winner,recommendation
+Phase 1: Alternative Models,AUC,0.8751,0.9008,2.93,CatBoost,Use CatBoost for single models
+Phase 2: Ensembles,AUC,0.9008,0.9144,1.51,Weighted Voting,Use weighted voting or simple average
+Phase 3: Feature Engineering,AUC,0.8584,0.8671,1.01,Enhanced (228 features),Use enhanced features carefully
+Phase 4: Regime Detection,AUC,0.9080,1.0000,10.13,Regime-Aware System,Use regime detection but NO regimes are profitable
+Phase 5: Walk-Forward,AUC,0.8462,0.8830,4.35,Rolling Window,Use rolling window for validation
+Overall System,Win Rate (out-of-sample),5.2,2.4,-53.85,NONE,System NOT profitable - DO NOT TRADE

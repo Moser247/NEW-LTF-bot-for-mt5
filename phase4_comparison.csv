@@ -1,0 +1,3 @@
+approach,auc,accuracy,improvement_pct
+Single Model,0.9080181151346891,0.9348281016442451,0.0
+Regime-Aware,1.0,1.0,10.129961432726144
