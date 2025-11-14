@@ -1,0 +1,35 @@
+{
+  "total_trades": 592,
+  "win_rate": 0.9881756756756757,
+  "profit_factor": 166.22602242661375,
+  "total_return_pct": 1321.8081794128993,
+  "max_drawdown_pct": -0.20953378732320563,
+  "avg_weekly_return_pct": 50.83877613126533,
+  "max_weekly_return_pct": 149.75000000000017,
+  "sharpe_ratio": 10.157824478509973,
+  "avg_win": 2273.1763750647838,
+  "avg_loss": -1142.8571428571333,
+  "exit_reasons": {
+    "tp1": 543,
+    "tp2": 25,
+    "stop_loss": 7,
+    "timeout": 17
+  },
+  "tier_performance": {
+    "high": {
+      "trades": 585,
+      "wins": 583,
+      "win_rate": 0.9965811965811966,
+      "total_pnl": 1323808.1794128986,
+      "avg_pnl": 2262.9199648083736
+    },
+    "medium": {
+      "trades": 7,
+      "wins": 2,
+      "win_rate": 0.2857142857142857,
+      "total_pnl": -1999.9999999999468,
+      "avg_pnl": -285.7142857142781
+    }
+  },
+  "final_capital": 1421808.1794128993
+}

@@ -1,0 +1,141 @@
+{
+  "winner_configuration": "Elite Filtered (\u22650.6)",
+  "walk_forward_validation": {
+    "training_period": "2025-05-13 15:10:00+00:00 to 2025-09-12 15:50:00+00:00",
+    "testing_period": "2025-09-15 14:19:00+00:00 to 2025-11-07 15:50:00+00:00",
+    "training_performance": {
+      "total_trades": 373,
+      "winning_trades": 108,
+      "losing_trades": 265,
+      "win_rate": 0.289544235924933,
+      "total_return": -88.4282121605975,
+      "final_capital": 11571.787839402497,
+      "max_drawdown": 89.71813881473763,
+      "avg_win": 722.6904755756348,
+      "avg_loss": -628.2218246142115,
+      "profit_factor": 0.4688319418882293,
+      "total_commission": "3730"
+    },
+    "testing_performance": {
+      "total_trades": 208,
+      "winning_trades": 61,
+      "losing_trades": 147,
+      "win_rate": 0.2932692307692308,
+      "total_return": -59.10820451749386,
+      "final_capital": 40891.795482506146,
+      "max_drawdown": 60.84065776891142,
+      "avg_win": 1251.886463982648,
+      "avg_loss": -921.5869307512609,
+      "profit_factor": 0.5636910464399442,
+      "total_commission": "2080"
+    }
+  },
+  "cost_scenarios": [
+    {
+      "scenario": "Optimistic",
+      "win_rate": 0.46153846153846156,
+      "total_return": 89.40334668685888,
+      "max_dd": 16.126956518499416,
+      "trades": 208,
+      "pf": 1.4850715198125293
+    },
+    {
+      "scenario": "Realistic",
+      "win_rate": 0.2932692307692308,
+      "total_return": -59.10820451749386,
+      "max_dd": 60.84065776891142,
+      "trades": 208,
+      "pf": 0.5636910464399442
+    },
+    {
+      "scenario": "Conservative",
+      "win_rate": 0.1346153846153846,
+      "total_return": -93.00280762183122,
+      "max_dd": 93.00280762183122,
+      "trades": 208,
+      "pf": 0.12668013829472302
+    },
+    {
+      "scenario": "Worst Case",
+      "win_rate": 0.038461538461538464,
+      "total_return": -99.43782403722601,
+      "max_dd": 99.43782403722601,
+      "trades": 208,
+      "pf": 0.017109043112304684
+    }
+  ],
+  "market_regimes": [
+    {
+      "regime": "trending_volatile",
+      "trades": 61,
+      "win_rate": 0.22950819672131148,
+      "return": -26.205350944420193,
+      "max_dd": 32.637614227316284
+    },
+    {
+      "regime": "trending_calm",
+      "trades": 61,
+      "win_rate": 0.21311475409836064,
+      "return": -23.38260251678618,
+      "max_dd": 26.071234109887214
+    },
+    {
+      "regime": "ranging_volatile",
+      "trades": 46,
+      "win_rate": 0.3695652173913043,
+      "return": -11.847198620903553,
+      "max_dd": 18.564196711834747
+    },
+    {
+      "regime": "ranging_calm",
+      "trades": 25,
+      "win_rate": 0.56,
+      "return": 15.074557856999732,
+      "max_dd": 10.375293935388402
+    }
+  ],
+  "stress_test": [
+    {
+      "win_rate_drop": "-0%",
+      "new_win_rate": 29.326923076923077,
+      "total_return": -59.10820451749383,
+      "final_capital": 40891.79548250616,
+      "still_profitable": "NO"
+    },
+    {
+      "win_rate_drop": "-10%",
+      "new_win_rate": 26.442307692307693,
+      "total_return": -71.19575489800195,
+      "final_capital": 28804.24510199805,
+      "still_profitable": "NO"
+    },
+    {
+      "win_rate_drop": "-20%",
+      "new_win_rate": 23.557692307692307,
+      "total_return": -84.03710482856091,
+      "final_capital": 15962.895171439086,
+      "still_profitable": "NO"
+    },
+    {
+      "win_rate_drop": "-30%",
+      "new_win_rate": 20.673076923076923,
+      "total_return": -96.67868226107572,
+      "final_capital": 3321.3177389242774,
+      "still_profitable": "NO"
+    },
+    {
+      "win_rate_drop": "-40%",
+      "new_win_rate": 17.78846153846154,
+      "total_return": -109.15471416621556,
+      "final_capital": -9154.714166215563,
+      "still_profitable": "NO"
+    },
+    {
+      "win_rate_drop": "-50%",
+      "new_win_rate": 14.903846153846153,
+      "total_return": -126.79462247750324,
+      "final_capital": -26794.62247750323,
+      "still_profitable": "NO"
+    }
+  ]
+}

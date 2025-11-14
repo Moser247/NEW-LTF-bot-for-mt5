@@ -1,0 +1,48 @@
+{
+  "total_samples": 11149,
+  "elite_filtered": {
+    "approach": "Elite Filtering (Top 20%)",
+    "training_samples": 5987,
+    "training_win_rate": 0.0973776515784199,
+    "cv_roc_auc": 0.9077908355554131,
+    "cv_std": 0.03598851476156258,
+    "high_conf_trades": 2002,
+    "high_conf_win_rate": 0.29120879120879123
+  },
+  "top_features": {
+    "approach": "Top 15 Features",
+    "training_samples": 11149,
+    "training_win_rate": 0.052291685352946454,
+    "cv_roc_auc": 0.8785643322227289,
+    "cv_std": 0.09486127375567387,
+    "high_conf_trades": 748,
+    "high_conf_win_rate": 0.7593582887700535
+  },
+  "ensemble": {
+    "approach": "Ensemble (3 Specialists)",
+    "training_samples": 11149,
+    "training_win_rate": 0.052291685352946454,
+    "high_conf_trades": 101,
+    "high_conf_win_rate": 1.0,
+    "votes_2of3_trades": 680,
+    "votes_2of3_win_rate": 0.7147058823529412
+  },
+  "top_15_features": [
+    "is_bullish",
+    "upper_wick",
+    "range",
+    "lower_wick",
+    "value_area_width",
+    "body_size",
+    "atr_5m",
+    "distance_to_vwap",
+    "distance_to_vah",
+    "ema_long_dist_1m",
+    "ema_cross_1m",
+    "tf_alignment_bearish",
+    "above_vwap",
+    "confluence_short",
+    "in_value_area"
+  ],
+  "elite_threshold": 2.0
+}
